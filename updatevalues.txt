@@ -1,0 +1,34 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `updatevalues`(IN BId int
+                              ,IN BName varchar(40)
+                              ,IN BAuthor varchar(40)
+                              ,IN BPrice int
+                              ,In BRelease date
+                              ,IN BSold bool)
+BEGIN
+
+		if BName = '' then
+            set BId = (select BookName from book where BookId= BId );
+            end if;
+		if BAuthor = '' then
+            set BId = (select BookAuthor from book where BookId= BId );
+            end if;
+		if BPrice = '' then
+            set BId = (select BookId from book where BookId= BId );
+            end if;
+		if BRelease = null then
+            set BId = (select BookId from book where BookId= BId );
+            end if;
+		if BSold = '' then
+            set BId = (select BookSold from book where BookId= BId );
+            end if;
+            update book
+            set BookId=BId,
+                BookName=BName,
+                BookAuthor=BAuthor,
+                 BookPrice=BPrice,
+                  BookRelease=BRelease,
+                   BookSold=BSold
+                 where BookId=BId;
+            
+
+END

@@ -1,0 +1,4 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `deletevalues`(in BId int)
+BEGIN
+   delete from book where BookId=Bid;
+END

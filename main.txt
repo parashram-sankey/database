@@ -1,0 +1,27 @@
+create database activity1;
+use activity1;
+create table book(
+BookId int primary key,
+BookName varchar(40),
+BookAuthor varchar(40),
+BookPrice int,
+BookRelease date,
+BookSold bool);updatevalues
+
+insert into book
+values (1,'The India Story','Bimal Jalal',500,'2019-12-21',true),
+      (2,'Lal Salam','Smriti Irani',400,'2018-11-10',true);
+insert into book
+values (3,'Monsoon','Sahitya Akademi',600,'2017-04-27',false),
+      (4,'Right Under Our Nose','R. Giridharan',450,'2018-01-18',true);
+        
+alter table book add ratings int;
+  ALTER TABLE book add BookRating int; 
+      
+  call readvalues();    
+  call insertvalues('5','Suparipalana','Dr. Shailendra Joshi','550','2017-05-20',false);
+  call updatevalues('4','Unfinished','Priyanka Chopra Jonas',700,'2018-01-21',true);
+  call deletevalues('5');
+  call updateratings('2','5');
+select * from book;
+																										``````````````````````````````````````````````````````````

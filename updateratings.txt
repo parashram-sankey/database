@@ -1,0 +1,9 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `updateratings`(in BId int,in BRating int)
+BEGIN
+   update book
+   set BookID=BId,
+       BookRating=BRating
+       where BookID=BId;
+   
+   
+END

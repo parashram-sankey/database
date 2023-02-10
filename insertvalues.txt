@@ -1,0 +1,10 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insertvalues`(IN BId int
+                              ,IN BName varchar(40)
+                              ,IN BAuthor varchar(40)
+                              ,IN BPrice int
+                              ,In BRelease date
+                              ,IN BSold bool)
+BEGIN
+   insert into book(BookId,BookName,BookAuthor,BookPrice,BookRelease,BookSold)
+        values (BId,BName,BAuthor,BPrice,BRelease,BSold);
+END
